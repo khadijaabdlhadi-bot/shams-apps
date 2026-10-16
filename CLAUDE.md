@@ -24,3 +24,13 @@ When you add or change an app:
    `shams-apps-source` repo.
 6. Smoke-test every touched page in a browser (no page errors) before pushing,
    then check the "pages build and deployment" run succeeded.
+
+## Signature on every design (owner's standing request)
+
+Every design made for the owner carries the Khadija Abdlhadi signature, not
+only web apps: PDFs, worksheets, posters, certificates, images, slides and
+videos. Ready assets with transparent backgrounds are in `brand/`:
+`signature-badge.png` (pill with KA monogram, for corners),
+`signature-gold.png` (for dark backgrounds), `signature-navy.png` (for light
+backgrounds), `signature-card.png` (end card with Arabic name and copyright),
+`monogram-KA.png`. Web pages use `sign.js`. Arabic name: خديجة عبد الهادي.
