@@ -1,5 +1,7 @@
 # تطبيقات مدرسة شمس الوطن
 
+**كل الروابط في صفحة واحدة**: https://khadijaabdlhadi-bot.github.io/shams-apps/links/
+
 - **ورقة الملاحظات اليومية**: https://khadijaabdlhadi-bot.github.io/shams-apps/daily-notes/
 - **مختبر شمس الوطن**: https://khadijaabdlhadi-bot.github.io/shams-apps/
 - **الواقع المعزز**: https://khadijaabdlhadi-bot.github.io/shams-apps/ar.html
