@@ -6,5 +6,6 @@
 - **قلب شمس الوطن**: https://khadijaabdlhadi-bot.github.io/shams-apps/heart/
 - **لوحة شمس الوطن (مسابقة الرياضيات)**: https://khadijaabdlhadi-bot.github.io/shams-apps/math-board/
 - **الجدول الدوري لشمس الوطن**: https://khadijaabdlhadi-bot.github.io/shams-apps/periodic-table/
+- **صيّاد الرموز (المجموعات: الانتماء والاحتواء)**: https://khadijaabdlhadi-bot.github.io/shams-apps/sets/
 
 © مدرسة شمس الوطن. جميع الحقوق محفوظة. لا يُسمح بنسخ هذه التطبيقات أو إعادة استخدامها أو نشرها دون إذن من المدرسة.
