@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="copyright" content="© مدرسة شمس الوطن. جميع الحقوق محفوظة.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>لوحة الإدارة — ملاحظات شمس الوطن</title>
+<meta name="theme-color" content="#13308f">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="logo" style="background-image:url(logo.jpg)" role="img" aria-label="شعار مدرسة شمس الوطن"></div>
+    <div><h1>لوحة الإدارة</h1><p>نشر ملاحظة لأولياء أمور الفصول</p></div>
+    <button class="act" id="outBtn" aria-label="خروج" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="wrap lift">
+  <section id="login" class="card">
+    <h2>تسجيل الدخول</h2>
+    <label class="f" for="pass">كلمة السر</label>
+    <input class="in" id="pass" type="password" autocomplete="current-password">
+    <button class="btn block" id="loginBtn" style="margin-top:14px">دخول</button>
+  </section>
+
+  <section id="panel" hidden>
+    <div class="card">
+      <h2>الملاحظة</h2>
+      <div class="tpls" id="tpls"></div>
+      <label class="f" for="title">العنوان</label>
+      <input class="in" id="title" maxlength="60" placeholder="ملاحظة من الإدارة">
+      <label class="f" for="body">النص</label>
+      <textarea class="in" id="body" maxlength="1500" placeholder="اكتب الملاحظة هنا…"></textarea>
+    </div>
+
+    <div class="card">
+      <h2>لمن؟ <span class="count" id="count"></span></h2>
+      <label class="allrow"><input type="checkbox" id="allSchool"> كل المدرسة</label>
+      <div id="tree"></div>
+    </div>
+
+    <div class="card">
+      <h2>معاينة الإشعار</h2>
+      <div class="preview"><img src="icon-192.png" alt=""><div><b id="pvT">ملاحظة من الإدارة</b><span id="pvB">…</span></div></div>
+    </div>
+
+    <button class="btn block sun" id="sendBtn">نشر وإرسال الإشعار</button>
+
+    <div class="feedhead"><h2>آخر الملاحظات</h2><button class="btn ghost" id="reloadBtn" style="height:38px">تحديث</button></div>
+    <div id="recent"></div>
+  </section>
+  <p class="foot">© مدرسة شمس الوطن</p>
+</main>
+<div class="modal" id="askModal" role="dialog" aria-modal="true" aria-labelledby="askMsg">
+  <div class="sheet"><h2 id="askMsg"></h2>
+    <div style="display:flex;gap:10px;margin-top:14px"><button class="btn sun" id="askYes" style="flex:1">تأكيد</button><button class="btn ghost" id="askNo" style="flex:1">إلغاء</button></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+<script src="../sign.js" data-pos="left" defer></script>
+</body>
+</html>

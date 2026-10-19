@@ -2,6 +2,7 @@
 
 **كل الروابط في صفحة واحدة**: https://khadijaabdlhadi-bot.github.io/shams-apps/links/
 
+- **ملاحظات شمس الوطن (لأولياء الأمور)**: https://khadijaabdlhadi-bot.github.io/shams-apps/class-notes/
 - **ورقة الملاحظات اليومية**: https://khadijaabdlhadi-bot.github.io/shams-apps/daily-notes/
 - **مختبر شمس الوطن**: https://khadijaabdlhadi-bot.github.io/shams-apps/
 - **الواقع المعزز**: https://khadijaabdlhadi-bot.github.io/shams-apps/ar.html

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="copyright" content="© مدرسة شمس الوطن. جميع الحقوق محفوظة.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ملاحظات شمس الوطن</title>
+<meta name="description" content="ملاحظات الإدارة لأولياء أمور طلاب مدرسة شمس الوطن، حسب الفصل.">
+<meta name="theme-color" content="#13308f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-apple.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="شمس الوطن">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="logo" style="background-image:url(logo.jpg)" role="img" aria-label="شعار مدرسة شمس الوطن"></div>
+    <div>
+      <h1>ملاحظات شمس الوطن</h1>
+      <p>كل جديد عن فصل ولدك يوصلك أول بأول</p>
+    </div>
+    <button class="act" id="editBtn" aria-label="تعديل الفصول" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="wrap lift">
+  <!-- تثبيت التطبيق -->
+  <div class="card install" id="installCard" hidden>
+    <img src="icon-192.png" alt="">
+    <div><b>ثبّت التطبيق على تلفونك</b><span id="installText">يظهر بأيقونة المدرسة وتوصلك الملاحظات أول بأول</span></div>
+    <button class="btn" id="installBtn">تثبيت</button>
+  </div>
+
+  <!-- اختيار الفصول -->
+  <section id="setup" hidden>
+    <div class="card">
+      <h2 id="setupTitle">اختر فصل ولدك</h2>
+      <p class="hint">لو عندك أكثر من ولد في المدرسة، اختر كل فصولهم.</p>
+      <div class="picked chips" id="picked"></div>
+    </div>
+    <div class="card">
+      <div class="seg" id="branchSeg"></div>
+      <div id="grades"></div>
+    </div>
+    <button class="btn block" id="saveBtn" disabled>حفظ وتفعيل الإشعارات</button>
+    <p class="foot"><button id="cancelBtn" class="btn ghost" hidden>رجوع</button></p>
+  </section>
+
+  <!-- الرئيسية -->
+  <section id="home" hidden>
+    <div class="card">
+      <div class="status" id="status">
+        <i class="dot"></i>
+        <div><b id="stTitle">الإشعارات</b><span id="stText">جارٍ التحقق…</span></div>
+        <button class="btn sun" id="enableBtn" hidden>تفعيل</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>فصولي</h2>
+      <div class="chips" id="myClasses"></div>
+    </div>
+    <div class="feedhead">
+      <h2>الملاحظات</h2>
+      <button class="btn ghost" id="refreshBtn" style="height:38px">تحديث</button>
+    </div>
+    <div id="feed"></div>
+  </section>
+
+  <p class="foot">© مدرسة شمس الوطن — عين زارة، طرابلس</p>
+</main>
+
+<!-- شرح الآيفون -->
+<div class="modal" id="iosModal" role="dialog" aria-modal="true" aria-labelledby="iosT">
+  <div class="sheet">
+    <h2 id="iosT">خطوة وحدة عشان توصلك الإشعارات على الآيفون</h2>
+    <p class="hint">الآيفون ما يبعت إشعارات إلا للتطبيق المثبّت على الشاشة الرئيسية.</p>
+    <ol class="steps">
+      <li><div>افتح الرابط هذا من متصفح <b>Safari</b> (مش من داخل فيسبوك).</div></li>
+      <li><div>اضغط زر المشاركة
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="m7 8 5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
+        تحت الشاشة.</div></li>
+      <li><div>اختر <b>«إضافة إلى الشاشة الرئيسية»</b> ثم <b>«إضافة»</b>.</div></li>
+      <li><div>افتح التطبيق من أيقونة شمس الوطن، واضغط <b>«تفعيل»</b>.</div></li>
+    </ol>
+    <button class="btn block" id="iosOk">فهمت</button>
+  </div>
+</div>
+
+<!-- فتح من داخل فيسبوك -->
+<div class="modal" id="fbModal" role="dialog" aria-modal="true" aria-labelledby="fbT">
+  <div class="sheet">
+    <h2 id="fbT">افتح الرابط في المتصفح</h2>
+    <p class="hint">متصفح فيسبوك ما يدعم الإشعارات. اضغط النقاط الثلاث <b>⋯</b> فوق، واختر <b>«فتح في المتصفح»</b> (Chrome أو Safari).</p>
+    <button class="btn block" id="copyBtn" style="margin-top:14px">نسخ الرابط</button>
+    <p class="foot"><button class="btn ghost" id="fbOk">متابعة على كل حال</button></p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script src="../sign.js" data-pos="left" defer></script>
+</body>
+</html>
