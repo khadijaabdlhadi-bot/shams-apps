@@ -110,3 +110,30 @@ textarea.in{min-height:130px;resize:vertical;line-height:1.7}
 .install div{min-width:0;flex:1}
 .install b{display:block;font-size:15.5px}
 .install span{display:block;font-size:13px;color:var(--muted)}
+
+/* ورقة الملاحظة */
+.noteview{position:fixed;inset:0;background:rgba(15,22,50,.6);z-index:55;display:none;overflow:auto;padding:calc(12px + env(safe-area-inset-top)) max(12px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left,0px))}
+.noteview.show{display:block}
+.noteview .bar{max-width:640px;margin:0 auto 10px;display:flex;justify-content:space-between;gap:10px}
+.paper{max-width:640px;margin:0 auto;background:#fff;color:#151515;border-radius:10px;padding:18px 14px 22px;box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.plogo{display:block;width:130px;margin:0 auto 10px}
+.pmeta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;font-size:14px;font-weight:700;padding:0 4px}
+.pmeta u{text-decoration:none;border-bottom:2px dotted #333;padding:0 6px;font-weight:800}
+.ptitle{text-align:center;font-weight:800;font-size:17px;color:var(--navy);margin:10px 0 2px}
+.ptitle:empty{display:none}
+.frame{position:relative;margin:14px 2px 0;border:3px solid #1a1a1a;outline:1.5px solid #1a1a1a;outline-offset:-9px;padding:30px 22px;min-height:180px}
+.cn{position:absolute;width:34px;height:34px;color:#1a1a1a;background:#fff}
+.cn svg{width:100%;height:100%;display:block}
+.cn.tr{top:-3px;right:-3px}.cn.tl{top:-3px;left:-3px;transform:scaleX(-1)}
+.cn.br{bottom:-3px;right:-3px;transform:scaleY(-1)}.cn.bl{bottom:-3px;left:-3px;transform:scale(-1,-1)}
+.prow{display:flex;gap:12px;align-items:stretch}
+.psub{writing-mode:vertical-rl;flex:none;width:30px;border-left:2px solid #1a1a1a;padding:4px 4px 4px 8px;font-size:13.5px;font-weight:800;text-align:center;display:flex;align-items:center;justify-content:center;min-height:90px}
+.ptxt{flex:1;min-width:0;font-size:19px;font-weight:800;line-height:2;padding:6px 2px;white-space:pre-wrap;overflow-wrap:anywhere}
+.psep{display:flex;align-items:center;gap:8px;margin:12px 0;color:#1a1a1a;font-size:11px}
+.psep::before,.psep::after{content:"";flex:1;height:1.5px;background:#1a1a1a}
+.note{cursor:pointer}
+.note .open{color:var(--blue);font-weight:800;font-size:13px;margin-inline-start:auto}
+/* إدارة: صفوف المواد */
+.irow{display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px;border:2px dashed var(--line);border-radius:14px;margin-bottom:10px}
+.irow textarea.in{min-height:70px;grid-column:1/-1}
+.irow .x{width:44px;height:44px;border-radius:12px;background:#fde8e6;color:var(--red);font-weight:800}

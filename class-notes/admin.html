@@ -34,10 +34,18 @@
     <div class="card">
       <h2>الملاحظة</h2>
       <div class="tpls" id="tpls"></div>
-      <label class="f" for="title">العنوان</label>
-      <input class="in" id="title" maxlength="60" placeholder="ملاحظة من الإدارة">
-      <label class="f" for="body">النص</label>
-      <textarea class="in" id="body" maxlength="1500" placeholder="اكتب الملاحظة هنا…"></textarea>
+      <label class="f" for="title">العنوان (يظهر في الإشعار)</label>
+      <input class="in" id="title" maxlength="60" placeholder="ملاحظات يوم الاثنين">
+      <label class="f">المواد</label>
+      <div id="items"></div>
+      <datalist id="subjects">
+        <option value="اللغة العربية"><option value="القرآن الكريم"><option value="التربية الإسلامية"><option value="الرياضيات">
+        <option value="العلوم"><option value="اللغة الإنجليزية"><option value="الاجتماعيات"><option value="الحاسوب">
+        <option value="التربية الفنية"><option value="التربية البدنية"><option value="الفيزياء"><option value="الكيمياء"><option value="الأحياء">
+      </datalist>
+      <button class="btn ghost" id="addItem" style="width:100%">+ إضافة مادة</button>
+      <label class="f" for="body">ملاحظة عامة (اختياري)</label>
+      <textarea class="in" id="body" maxlength="1500" placeholder="تذكير، إعلان، أو أي ملاحظة ثانية…"></textarea>
     </div>
 
     <div class="card">
@@ -49,6 +57,8 @@
     <div class="card">
       <h2>معاينة الإشعار</h2>
       <div class="preview"><img src="icon-192.png" alt=""><div><b id="pvT">ملاحظة من الإدارة</b><span id="pvB">…</span></div></div>
+      <h2 style="margin-top:14px">لما ولي الأمر يفتحها</h2>
+      <div id="pvPaper" style="background:#e9e5da;border-radius:14px;padding:10px"></div>
     </div>
 
     <button class="btn block sun" id="sendBtn">نشر وإرسال الإشعار</button>
