@@ -15,7 +15,7 @@
 <header class="top">
   <div class="wrap">
     <div class="logo" style="background-image:url(logo.jpg)" role="img" aria-label="شعار مدرسة شمس الوطن"></div>
-    <div><h1>لوحة الإدارة</h1><p>نشر ملاحظة لأولياء أمور الفصول</p></div>
+    <div><h1 id="hTitle">لوحة الإدارة</h1><p id="hSub">ملاحظات الفصول لأولياء الأمور</p></div>
     <button class="act" id="outBtn" aria-label="خروج" hidden>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
     </button>
@@ -25,51 +25,104 @@
 <main class="wrap lift">
   <section id="login" class="card">
     <h2>تسجيل الدخول</h2>
+    <p class="hint">كل مستخدمة تدخل بكلمة السر الخاصة بيها.</p>
     <label class="f" for="pass">كلمة السر</label>
     <input class="in" id="pass" type="password" autocomplete="current-password">
     <button class="btn block" id="loginBtn" style="margin-top:14px">دخول</button>
   </section>
 
   <section id="panel" hidden>
-    <div class="card">
-      <h2>الملاحظة</h2>
-      <div class="tpls" id="tpls"></div>
-      <label class="f" for="title">العنوان (يظهر في الإشعار)</label>
-      <input class="in" id="title" maxlength="60" placeholder="ملاحظات يوم الاثنين">
-      <label class="f">المواد</label>
-      <div id="items"></div>
-      <datalist id="subjects">
-        <option value="اللغة العربية"><option value="القرآن الكريم"><option value="التربية الإسلامية"><option value="الرياضيات">
-        <option value="العلوم"><option value="اللغة الإنجليزية"><option value="الاجتماعيات"><option value="الحاسوب">
-        <option value="التربية الفنية"><option value="التربية البدنية"><option value="الفيزياء"><option value="الكيمياء"><option value="الأحياء">
-      </datalist>
-      <button class="btn ghost" id="addItem" style="width:100%">+ إضافة مادة</button>
-      <label class="f" for="body">ملاحظة عامة (اختياري)</label>
-      <textarea class="in" id="body" maxlength="1500" placeholder="تذكير، إعلان، أو أي ملاحظة ثانية…"></textarea>
+    <div class="seg" id="tabs">
+      <button data-tab="write" class="on">كتابة</button>
+      <button data-tab="review" id="tabReview" hidden>المراجعة <span class="badge" id="pendBadge" hidden>0</span></button>
+      <button data-tab="users" id="tabUsers" hidden>المستخدمات</button>
     </div>
 
-    <div class="card">
-      <h2>لمن؟ <span class="count" id="count"></span></h2>
-      <label class="allrow"><input type="checkbox" id="allSchool"> كل المدرسة</label>
-      <div id="tree"></div>
+    <!-- كتابة -->
+    <div id="pWrite">
+      <div class="banner" id="editBanner" hidden>
+        <div><b>تعديل ومراجعة</b><span id="editInfo"></span></div>
+        <button class="btn ghost" id="cancelEdit" style="height:38px">إلغاء</button>
+      </div>
+      <div class="card">
+        <h2>الملاحظة</h2>
+        <div class="tpls" id="tpls"></div>
+        <label class="f" for="title">العنوان (يظهر في الإشعار)</label>
+        <input class="in" id="title" maxlength="60" placeholder="ملاحظات يوم الاثنين">
+        <label class="f">المواد</label>
+        <div id="items"></div>
+        <datalist id="subjects">
+          <option value="اللغة العربية"><option value="القرآن الكريم"><option value="التربية الإسلامية"><option value="الرياضيات">
+          <option value="العلوم"><option value="اللغة الإنجليزية"><option value="الاجتماعيات"><option value="الحاسوب">
+          <option value="التربية الفنية"><option value="التربية البدنية"><option value="الفيزياء"><option value="الكيمياء"><option value="الأحياء">
+        </datalist>
+        <button class="btn ghost" id="addItem" style="width:100%">+ إضافة مادة</button>
+        <label class="f" for="body">ملاحظة عامة (اختياري)</label>
+        <textarea class="in" id="body" maxlength="1500" placeholder="تذكير، إعلان، أو أي ملاحظة ثانية…"></textarea>
+      </div>
+
+      <div class="card">
+        <h2>لمن؟ <span class="count" id="count"></span></h2>
+        <label class="allrow" id="allRow" hidden><input type="checkbox" id="allSchool"> كل المدرسة</label>
+        <div id="tree"></div>
+      </div>
+
+      <div class="card">
+        <h2>معاينة الإشعار</h2>
+        <div class="preview"><img src="icon-192.png" alt=""><div><b id="pvT">ملاحظة من الإدارة</b><span id="pvB">…</span></div></div>
+        <h2 style="margin-top:14px">لما ولي الأمر يفتحها</h2>
+        <div id="pvPaper" style="background:#e9e5da;border-radius:14px;padding:10px"></div>
+      </div>
+
+      <p class="hint" id="sendHint" hidden style="margin-bottom:8px">ملاحظتك توصل لمديرة القسم أولاً، وبعد موافقتها تنرسل لأولياء الأمور.</p>
+      <button class="btn block sun" id="sendBtn">نشر وإرسال الإشعار</button>
+
+      <div class="feedhead"><h2 id="recentTitle">آخر الملاحظات</h2><button class="btn ghost" id="reloadBtn" style="height:38px">تحديث</button></div>
+      <div id="recent"></div>
     </div>
 
-    <div class="card">
-      <h2>معاينة الإشعار</h2>
-      <div class="preview"><img src="icon-192.png" alt=""><div><b id="pvT">ملاحظة من الإدارة</b><span id="pvB">…</span></div></div>
-      <h2 style="margin-top:14px">لما ولي الأمر يفتحها</h2>
-      <div id="pvPaper" style="background:#e9e5da;border-radius:14px;padding:10px"></div>
+    <!-- المراجعة -->
+    <div id="pReview" hidden>
+      <div class="feedhead" style="margin-top:4px"><h2>بانتظار موافقتك</h2><button class="btn ghost" id="reloadPend" style="height:38px">تحديث</button></div>
+      <div id="pendList"></div>
     </div>
 
-    <button class="btn block sun" id="sendBtn">نشر وإرسال الإشعار</button>
-
-    <div class="feedhead"><h2>آخر الملاحظات</h2><button class="btn ghost" id="reloadBtn" style="height:38px">تحديث</button></div>
-    <div id="recent"></div>
+    <!-- المستخدمات -->
+    <div id="pUsers" hidden>
+      <div class="card">
+        <h2 id="uFormTitle">إضافة مستخدمة</h2>
+        <label class="f" for="uName">الاسم</label>
+        <input class="in" id="uName" maxlength="60" placeholder="مثلاً: مس رنا">
+        <label class="f" for="uRole">الدور</label>
+        <select class="in" id="uRole">
+          <option value="assistant">مساعدة فصل — ملاحظاتها تحتاج موافقة</option>
+          <option value="supervisor">مديرة قسم — تراجع وتوافق وتنشر</option>
+          <option value="admin">إدارة — كل الصلاحيات</option>
+        </select>
+        <label class="f" for="uPass">كلمة السر</label>
+        <input class="in" id="uPass" type="text" autocomplete="off" maxlength="40" placeholder="6 حروف أو أكثر">
+        <p class="hint" id="uPassHint" hidden>اتركيها فاضية لو ما تبيش تغيّريها.</p>
+        <div id="uClassBox">
+          <label class="f">الفصول</label>
+          <div class="tpls" id="presets"></div>
+          <div class="count" id="uCount" style="margin:6px 0"></div>
+          <div id="uTree"></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <button class="btn sun" id="uSave" style="flex:1">حفظ</button>
+          <button class="btn ghost" id="uCancel" hidden>إلغاء</button>
+        </div>
+      </div>
+      <div class="feedhead"><h2>المستخدمات</h2><button class="btn ghost" id="reloadUsers" style="height:38px">تحديث</button></div>
+      <div id="userList"></div>
+    </div>
   </section>
   <p class="foot">© مدرسة شمس الوطن</p>
 </main>
+
 <div class="modal" id="askModal" role="dialog" aria-modal="true" aria-labelledby="askMsg">
   <div class="sheet"><h2 id="askMsg"></h2>
+    <textarea class="in" id="askInput" hidden maxlength="300" style="min-height:90px;margin-top:6px"></textarea>
     <div style="display:flex;gap:10px;margin-top:14px"><button class="btn sun" id="askYes" style="flex:1">تأكيد</button><button class="btn ghost" id="askNo" style="flex:1">إلغاء</button></div>
   </div>
 </div>
