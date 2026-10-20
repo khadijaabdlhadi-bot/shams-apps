@@ -153,3 +153,11 @@ textarea.in{min-height:130px;resize:vertical;line-height:1.7}
 .user .uh{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .user .uh b{font-size:16.5px}
 select.in{appearance:auto}
+
+.chip.st-ret{background:#e8efff;color:#13308f;border-color:#cbd8fb}
+.comment{margin-top:8px;padding:9px 12px;border-radius:12px;background:#eef3ff;border:1px solid #cbd8fb;color:#13308f;font-size:14px;line-height:1.7;white-space:pre-wrap}
+.btn.fix{width:100%;margin-top:10px}
+.btn.ret{color:var(--navy);background:#e8efff}
+.ret-notice{width:100%;text-align:start;font:inherit;cursor:pointer;background:#e8efff;border-color:#cbd8fb}
+.ret-notice span{color:#13308f!important}
+.toast{pointer-events:none}
