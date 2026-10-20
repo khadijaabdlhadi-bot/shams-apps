@@ -2,6 +2,7 @@
 
 **كل الروابط في صفحة واحدة**: https://khadijaabdlhadi-bot.github.io/shams-apps/links/
 
+- **Sound Detectives — محققو الأصوات (إنجليزي تفاعلي)**: https://khadijaabdlhadi-bot.github.io/shams-apps/sound-detectives/
 - **تحدّي المتباينات (مسابقة 4 فرق للسبورة الذكية)**: https://khadijaabdlhadi-bot.github.io/shams-apps/inequalities-challenge/
 - **ملاحظات شمس الوطن (لأولياء الأمور)**: https://khadijaabdlhadi-bot.github.io/shams-apps/class-notes/
 - **ورقة الملاحظات اليومية**: https://khadijaabdlhadi-bot.github.io/shams-apps/daily-notes/
