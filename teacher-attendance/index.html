@@ -35,10 +35,10 @@
 <main class="wrap lift">
   <!-- الدخول -->
   <section class="card" id="loginView">
-    <h2>تسجيل الدخول</h2>
-    <p class="hint" style="margin-bottom:14px">الرمز والرقم السري تستلمينهما من إدارة المدرسة (مرة وحدة فقط).</p>
-    <label class="field"><span>رمز المدرسة</span><input id="code" class="num" inputmode="numeric" autocomplete="off" maxlength="8" placeholder="••••"></label>
-    <label class="field"><span>الرقم السري</span><input id="pin" class="num" type="password" inputmode="numeric" autocomplete="off" maxlength="8" placeholder="••••"></label>
+    <h2>أهلاً بك</h2>
+    <p class="hint" style="margin-bottom:14px" id="loginHint">اكتبي رقم هاتفك للدخول. أول مرة؟ سيُطلب منك اسمك الرباعي لإنشاء حسابك.</p>
+    <label class="field"><span>رقم الهاتف</span><input id="phone" class="tel" type="tel" inputmode="tel" autocomplete="tel" maxlength="16" placeholder="09XXXXXXXX"></label>
+    <label class="field" id="nameBox" hidden><span>الاسم الرباعي</span><input id="fname" autocomplete="name" maxlength="60" placeholder="مثال: خديجة محمد علي أحمد"></label>
     <button class="btn block" id="loginBtn">دخول</button>
     <p class="err" id="loginErr"></p>
   </section>

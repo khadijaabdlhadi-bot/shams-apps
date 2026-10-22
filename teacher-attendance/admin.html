@@ -56,12 +56,11 @@
     <!-- المدرسات -->
     <section id="p-teachers" hidden>
       <div class="card">
-        <h2>إضافة مدرسة</h2>
-        <div class="bar" style="margin:0"><input id="tName" placeholder="اسم المدرسة" style="flex:1;min-width:200px"><button class="btn" id="tAdd">إضافة</button></div>
-        <p class="hint" style="margin-top:8px">يُنشأ لها رمز ورقم سري تلقائياً ويظهران مرة وحدة — أرسليهما لها عبر واتساب.</p>
-        <div id="tCred"></div>
+        <h2>رابط التسجيل للمدرسات</h2>
+        <p class="hint">المدرسات ينشئن حساباتهن بأنفسهن (الاسم الرباعي + رقم الهاتف). أرسلي لهن الرابط في مجموعة الواتساب.</p>
+        <div class="bar" style="margin:10px 0 0"><input id="tLink" readonly dir="ltr" style="flex:1;min-width:200px"><button class="btn" id="tCopy">نسخ</button><a class="btn sm" style="background:#25d366;height:42px" id="tWa" target="_blank" rel="noopener">واتساب</a></div>
       </div>
-      <div class="scroll"><table class="tbl"><thead><tr><th>الاسم</th><th class="n">الرمز</th><th>الجهاز</th><th></th></tr></thead><tbody id="tRows"></tbody></table></div>
+      <div class="scroll"><table class="tbl"><thead><tr><th>الاسم</th><th class="n">الهاتف</th><th>الجهاز</th><th></th></tr></thead><tbody id="tRows"></tbody></table></div>
     </section>
 
     <!-- الإعدادات -->
