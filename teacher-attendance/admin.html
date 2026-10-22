@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="copyright" content="© مدرسة شمس الوطن. جميع الحقوق محفوظة.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>لوحة حضور شمس الوطن</title>
+<meta name="theme-color" content="#13308f">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap wide">
+    <div class="logo" style="background-image:url(logo.png)" role="img" aria-label="شعار مدرسة شمس الوطن"></div>
+    <div><h1>لوحة الحضور — الإدارة</h1><p>مدرسة شمس الوطن</p></div>
+    <button class="act" id="logoutBtn" aria-label="خروج" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="wrap wide lift">
+  <section class="card" id="loginView" style="max-width:420px;margin-inline:auto">
+    <h2>دخول الإدارة</h2>
+    <label class="field"><span>كلمة السر</span><input id="pw" type="password" autocomplete="current-password"></label>
+    <button class="btn block" id="loginBtn">دخول</button>
+    <p class="err" id="loginErr"></p>
+  </section>
+
+  <div id="app" hidden>
+    <nav class="tabs" id="tabs">
+      <button data-t="today" class="on">اليوم</button>
+      <button data-t="report">التقرير الشهري</button>
+      <button data-t="teachers">المدرسات</button>
+      <button data-t="settings">الإعدادات</button>
+    </nav>
+
+    <!-- اليوم -->
+    <section id="p-today">
+      <div class="bar"><input type="date" id="dDate"><button class="btn ghost" id="dRefresh">تحديث</button><span class="hint" id="dInfo"></span></div>
+      <div class="stats" id="dStats"></div>
+      <div class="scroll"><table class="tbl"><thead><tr><th>المدرسة</th><th>الحالة</th><th class="n">حضور</th><th class="n">انصراف</th><th class="n">البعد</th><th>ملاحظات</th><th></th></tr></thead><tbody id="dRows"></tbody></table></div>
+    </section>
+
+    <!-- التقرير -->
+    <section id="p-report" hidden>
+      <div class="bar"><input type="month" id="rMonth"><button class="btn ghost" id="rLoad">عرض</button>
+        <button class="btn" id="rCsv">تصدير Excel (CSV)</button><button class="btn ghost" id="rPrint">طباعة</button></div>
+      <p class="hint" id="rInfo" style="margin-bottom:8px"></p>
+      <div class="scroll"><table class="tbl"><thead><tr><th>المدرسة</th><th class="n">حضور</th><th class="n">تأخير</th><th class="n">دقائق التأخير</th><th class="n">انصراف مبكر</th><th class="n">غياب</th><th class="n">أعذار/إجازات</th><th class="n">ساعات العمل</th></tr></thead><tbody id="rRows"></tbody></table></div>
+    </section>
+
+    <!-- المدرسات -->
+    <section id="p-teachers" hidden>
+      <div class="card">
+        <h2>إضافة مدرسة</h2>
+        <div class="bar" style="margin:0"><input id="tName" placeholder="اسم المدرسة" style="flex:1;min-width:200px"><button class="btn" id="tAdd">إضافة</button></div>
+        <p class="hint" style="margin-top:8px">يُنشأ لها رمز ورقم سري تلقائياً ويظهران مرة وحدة — أرسليهما لها عبر واتساب.</p>
+        <div id="tCred"></div>
+      </div>
+      <div class="scroll"><table class="tbl"><thead><tr><th>الاسم</th><th class="n">الرمز</th><th>الجهاز</th><th></th></tr></thead><tbody id="tRows"></tbody></table></div>
+    </section>
+
+    <!-- الإعدادات -->
+    <section id="p-settings" hidden>
+      <div class="card">
+        <h2>موقع المدرسة ونطاق التسجيل</h2>
+        <p class="hint" style="margin-bottom:10px">قفي داخل المدرسة (يفضّل وسط الساحة) على هاتف فيه GPS واضغطي «استخدام موقعي الحالي».</p>
+        <button class="btn sun" id="sHere" style="margin-bottom:12px">📍 استخدام موقعي الحالي</button>
+        <div class="row2">
+          <label class="field"><span>خط العرض</span><input id="sLat" inputmode="decimal" dir="ltr"></label>
+          <label class="field"><span>خط الطول</span><input id="sLng" inputmode="decimal" dir="ltr"></label>
+        </div>
+        <div class="row2">
+          <label class="field"><span>نطاق التسجيل (متر)</span><input id="sRadius" type="number" min="30" max="1000" dir="ltr"></label>
+          <label class="field"><span>أقصى خطأ للدقة (متر)</span><input id="sAcc" type="number" min="15" max="300" dir="ltr"></label>
+        </div>
+        <iframe class="mapframe" id="sMap" title="خريطة" loading="lazy" hidden></iframe>
+      </div>
+      <div class="card">
+        <h2>أوقات الدوام</h2>
+        <div class="row2">
+          <label class="field"><span>بداية الدوام</span><input id="sStart" type="time"></label>
+          <label class="field"><span>نهاية الدوام</span><input id="sEnd" type="time"></label>
+        </div>
+        <label class="field"><span>سماح التأخير (دقيقة)</span><input id="sGrace" type="number" min="0" max="120" dir="ltr"></label>
+        <span class="hint" style="display:block;margin-bottom:6px;font-weight:700">أيام الدوام</span>
+        <div class="days" id="sDays"></div>
+        <label class="field"><span>العطل الرسمية (تاريخ في كل سطر، مثل 2026-12-24)</span><textarea id="sHol" dir="ltr"></textarea></label>
+      </div>
+      <div class="card">
+        <h2>الحماية</h2>
+        <label class="days" style="margin:0"><label><input type="checkbox" id="sBind"> ربط حساب كل مدرسة بجهازها الأول (يمنع تسجيل أحد عن أحد)</label></label>
+      </div>
+      <button class="btn block" id="sSave">حفظ الإعدادات</button>
+    </section>
+  </div>
+
+  <p class="foot"><b>مدرسة شمس الوطن</b> — عين زارة، طرابلس<br><span id="sign"></span></p>
+</main>
+
+<div class="overlay" id="modal" hidden>
+  <div class="sheet" style="text-align:right">
+    <h3 id="mTitle" style="margin-bottom:10px"></h3>
+    <label class="field"><span>الحالة</span><select id="mStatus"><option value="present">حاضرة (وقت يدوي)</option><option value="excused">غياب بعذر</option><option value="leave">إجازة</option><option value="absent">غائبة</option></select></label>
+    <div class="row2" id="mTimes">
+      <label class="field"><span>الحضور</span><input type="time" id="mIn"></label>
+      <label class="field"><span>الانصراف</span><input type="time" id="mOut"></label>
+    </div>
+    <label class="field"><span>ملاحظة</span><input id="mNote" maxlength="150"></label>
+    <button class="btn block" id="mSave">حفظ</button>
+    <button class="btn red block" id="mDel" style="margin-top:8px;height:44px;font-size:15px" hidden>حذف سجل اليوم</button>
+    <button class="btn ghost block" id="mClose" style="margin-top:8px;height:44px;font-size:15px">إلغاء</button>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="admin.js"></script>
+<script src="../sign.js" data-pos="left" defer></script>
+</body>
+</html>
