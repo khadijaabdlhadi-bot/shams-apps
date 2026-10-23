@@ -2,6 +2,7 @@
 
 **كل الروابط في صفحة واحدة**: https://khadijaabdlhadi-bot.github.io/shams-apps/links/
 
+- **Phonics Star — نجم الفونكس (مراجعة sh ch th والمقاطع)**: https://khadijaabdlhadi-bot.github.io/shams-apps/phonics/
 - **حضور شمس الوطن (حضور وانصراف المدرسات بالموقع)**: https://khadijaabdlhadi-bot.github.io/shams-apps/teacher-attendance/
 - **Sound Detectives — محققو الأصوات (إنجليزي تفاعلي)**: https://khadijaabdlhadi-bot.github.io/shams-apps/sound-detectives/
 - **تحدّي المتباينات (مسابقة 4 فرق للسبورة الذكية)**: https://khadijaabdlhadi-bot.github.io/shams-apps/inequalities-challenge/
