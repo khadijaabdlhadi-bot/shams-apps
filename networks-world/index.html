@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="copyright" content="© مدرسة شمس الوطن. جميع الحقوق محفوظة.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1a3f">
+<title>عالم الشبكات - مدرسة شمس الوطن</title>
+<link rel="icon" href="img/logo.webp">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Cairo:wght@500;700&family=Aref+Ruqaa:wght@400;700&display=swap">
+<style>
+/* Layout: sticky bottom tab bar, five panels (home, explorer, compare, gallery, quiz); canvases carry the motion. */
+:root{
+  --night:#0b1a3f; --night2:#12275c; --sky:#1b5fd6; --sun:#ffc21a; --coral:#ff5a3c; --mint:#2fd6a0; --paper:#fff8e6;
+  --card:rgba(255,255,255,.08); --line:rgba(255,255,255,.18);
+  --font-display:'Reem Kufi','Cairo',sans-serif; --font-body:'Cairo',system-ui,sans-serif; --font-sign:'Aref Ruqaa','Cairo',serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100%;background:radial-gradient(circle at 15% 0,#1a3a96 0,var(--night) 55%) fixed,var(--night);color:var(--paper);font-family:var(--font-body);line-height:1.7;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-top:max(12px,env(safe-area-inset-top,0px));padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--font-display);margin:0;line-height:1.25;text-wrap:balance}
+h2{font-size:clamp(26px,4.4vw,40px)}
+h2 b,h1 b{color:var(--sun)}
+p{margin:0}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+
+/* top brand */
+.brand{display:flex;align-items:center;gap:10px;padding-block:6px}
+.brand img{height:44px;width:auto}
+.brand span{font-family:var(--font-display);font-weight:700;font-size:18px}
+
+/* tab bar */
+.tabs{position:fixed;z-index:20;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:4px;
+  padding:8px max(12px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));
+  background:rgba(8,18,48,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.tabs button{flex:1;max-width:150px;min-width:0;border:0;background:transparent;color:var(--paper);opacity:.7;padding:8px 4px;border-radius:14px;cursor:pointer;
+  font-family:var(--font-display);font-size:14px;display:flex;flex-direction:column;align-items:center;gap:2px;transition:all .25s}
+.tabs button .ic{font-size:22px;line-height:1.2}
+.tabs button[aria-selected=true]{background:var(--sun);color:var(--night);opacity:1;transform:translateY(-4px);box-shadow:0 6px 0 rgba(0,0,0,.25)}
+.tabs button:hover{opacity:1}
+
+.panel{display:none;padding-block:18px 24px;animation:in .6s cubic-bezier(.2,.9,.3,1)}
+.panel.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(22px)}}
+.lead{opacity:.85;max-width:60ch;margin-top:8px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-radius:28px;min-height:min(70vh,560px);display:grid;place-items:center;text-align:center;
+  background:linear-gradient(160deg,#173b9f,#0d2160);border:1px solid var(--line);padding:28px 16px}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero-in{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;min-width:0}
+.hero-logo{width:min(300px,64vw);height:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.5));animation:bob 5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px) rotate(-1.5deg)}}
+.hero h1{font-size:clamp(38px,8vw,78px)}
+.hero p.sub{font-size:clamp(16px,2.4vw,22px);max-width:36ch;opacity:.92}
+.cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.btn{border:0;cursor:pointer;border-radius:999px;padding:12px 26px;font-family:var(--font-display);font-weight:700;font-size:18px;background:var(--sun);color:var(--night);box-shadow:0 6px 0 rgba(0,0,0,.3);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 rgba(0,0,0,.3)}
+.btn.ghost{background:rgba(255,255,255,.14);color:#fff;box-shadow:none}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;cursor:pointer;text-align:start;color:inherit;font:inherit;transition:transform .2s,background .2s}
+.chip:hover{transform:translateY(-4px);background:rgba(255,255,255,.14)}
+.chip b{font-family:var(--font-display);font-size:30px;display:block;line-height:1.1}
+.chip small{opacity:.8;display:block;font-size:14px}
+.chip.lan b{color:var(--mint)}.chip.man b{color:var(--sun)}.chip.wan b{color:#6fb1ff}
+
+/* explorer */
+.seg{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.seg button{border:2px solid var(--line);background:transparent;color:var(--paper);border-radius:999px;padding:8px 20px;font-family:var(--font-display);font-size:17px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--sun);color:var(--night);border-color:var(--sun)}
+.explore{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:16px;margin-top:14px}
+.scene{position:relative;border-radius:24px;background:linear-gradient(180deg,#14307e,#0c1d52);border:1px solid var(--line);overflow:hidden;aspect-ratio:16/10;min-height:300px}
+.scene canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:manipulation;cursor:pointer}
+.side{display:flex;flex-direction:column;gap:12px;min-width:0}
+.box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;min-width:0}
+.box h3{font-size:22px;color:var(--sun);margin-bottom:6px}
+.log{font-size:14px;opacity:.9;min-height:3.4em}
+.facts{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.facts li{display:flex;gap:10px;align-items:baseline;font-size:15px}
+.facts li b{color:var(--sun);font-family:var(--font-display);flex:none;min-width:5.2em}
+
+/* compare */
+.ruler{position:relative;margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px 18px}
+.zones{display:flex;height:46px;border-radius:14px;overflow:hidden;font-family:var(--font-display);font-weight:700;font-size:15px}
+.zones div{display:grid;place-items:center;color:var(--night)}
+.zones .z1{flex:0 0 30%;background:var(--mint)}.zones .z2{flex:0 0 30%;background:var(--sun)}.zones .z3{flex:1;background:#6fb1ff}
+.range{width:100%;margin-top:18px;accent-color:var(--sun);height:32px}
+.readout{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.readout .big{font-family:var(--font-display);font-size:clamp(34px,6vw,56px);color:var(--sun);transition:color .3s}
+.readout p{flex:1 1 220px;min-width:0}
+.cmp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.cmp .box{transition:transform .3s,box-shadow .3s,border-color .3s}
+.cmp .box.hot{transform:translateY(-8px);border-color:var(--sun);box-shadow:0 0 0 3px rgba(255,194,26,.35)}
+.cmp .box h3 span{font-size:15px;opacity:.8;display:block;font-family:var(--font-body)}
+.cmp ul{margin:8px 0 0;padding-inline-start:20px;font-size:15px}
+
+/* gallery */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:16px}
+.thumb{position:relative;border:0;padding:0;cursor:pointer;border-radius:18px;overflow:hidden;background:#fff;aspect-ratio:3/2;box-shadow:0 10px 24px rgba(0,0,0,.35);transition:transform .25s}
+.thumb:hover{transform:translateY(-6px) rotate(-1deg)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.thumb:hover img{transform:scale(1.08)}
+.thumb span{position:absolute;inset:auto 0 0 0;padding:18px 10px 8px;background:linear-gradient(transparent,rgba(5,12,34,.9));color:#fff;font-family:var(--font-display);font-size:14px;text-align:start}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(5,10,28,.92);display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px}
+.lb.on{display:flex;animation:in .3s}
+.lb img{max-width:min(96vw,1100px);max-height:72vh;border-radius:16px;box-shadow:0 0 0 4px #fff;background:#fff}
+.lb .row{display:flex;gap:12px;align-items:center}
+.lb .row p{font-family:var(--font-display);font-size:18px;text-align:center;min-width:0;max-width:60vw}
+.round{width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:20px;cursor:pointer;flex:none}
+.round:hover{background:var(--sun);color:var(--night)}
+
+/* quiz */
+.qcard{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(16px,3vw,28px)}
+.qbar{height:8px;border-radius:9px;background:rgba(255,255,255,.14);overflow:hidden}
+.qbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sun),var(--coral));transition:width .5s;margin-right:0;margin-left:auto}
+.qnum{font-size:14px;opacity:.8;margin:10px 0 4px}
+.qtext{font-family:var(--font-display);font-size:clamp(20px,3.4vw,30px);line-height:1.4;text-wrap:balance}
+.opts{display:grid;gap:10px;margin-top:16px}
+.opt{border:2px solid var(--line);background:rgba(255,255,255,.06);color:var(--paper);border-radius:16px;padding:12px 16px;text-align:start;font-size:17px;cursor:pointer;transition:all .2s}
+.opt:hover:not(:disabled){border-color:var(--sun);transform:translateX(-4px)}
+.opt.ok{background:var(--mint);color:var(--night);border-color:var(--mint);animation:pulse .5s}
+.opt.no{background:var(--coral);color:#fff;border-color:var(--coral);animation:shake .4s}
+.opt:disabled{cursor:default}
+@keyframes pulse{50%{transform:scale(1.03)}}
+@keyframes shake{25%{transform:translateX(8px)}75%{transform:translateX(-8px)}}
+.why{min-height:1.7em;margin-top:12px;font-size:15px;opacity:.95}
+.result{text-align:center;display:none;flex-direction:column;align-items:center;gap:10px;padding:10px}
+.stars{font-size:46px;letter-spacing:6px}
+.stars span{display:inline-block;opacity:.25;filter:grayscale(1)}
+.stars span.lit{opacity:1;filter:none;animation:pop .6s both}
+@keyframes pop{from{transform:scale(0) rotate(-90deg)}}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:60;width:100%;height:100%}
+
+/* signature */
+.foot{margin-top:26px;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.foot small{opacity:.7;display:block}
+.sig{display:flex;flex-direction:column;align-items:flex-start}
+.sig .by{font-size:12px;letter-spacing:.12em;opacity:.7}
+.sig .nm{font-family:var(--font-sign);font-size:clamp(30px,5vw,46px);color:var(--sun);line-height:1.2;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.sig svg{width:min(260px,60vw);height:16px}
+.sig path{stroke:var(--sun);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-dasharray:320;stroke-dashoffset:320;animation:draw 2.4s ease .6s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+@media (max-width:760px){
+  .explore{grid-template-columns:minmax(0,1fr)}
+  .scene{aspect-ratio:4/3.4}
+  .cmp{grid-template-columns:minmax(0,1fr)}
+  .cmp .box.hot{transform:none}
+  .chips{grid-template-columns:minmax(0,1fr)}
+  .tabs button{font-size:12px}
+  .brand span{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><img src="img/logo.webp" alt="شعار مدرسة شمس الوطن"><span>مدرسة شمس الوطن</span></div>
+
+  <!-- الرئيسية -->
+  <section class="panel on" id="home" role="tabpanel">
+    <div class="hero">
+      <canvas id="heroCv" aria-hidden="true"></canvas>
+      <div class="hero-in">
+        <img class="hero-logo" src="img/logo.webp" alt="">
+        <h1>عالَم <b>الشبكات</b></h1>
+        <p class="sub">استكشف كيف تتحدث الأجهزة مع بعضها في البيت والمدينة والعالم.</p>
+        <div class="cta">
+          <button class="btn" data-go="explore">ابدأ الاستكشاف</button>
+          <button class="btn ghost" data-go="quiz">اختبر نفسك</button>
+        </div>
+      </div>
+    </div>
+    <div class="chips">
+      <button class="chip lan" data-go="explore" data-net="lan"><b>LAN</b>الشبكة المحلية<small>بيت، فصل، مكتب</small></button>
+      <button class="chip man" data-go="explore" data-net="man"><b>MAN</b>شبكة المدينة<small>مدارس ومستشفيات وجامعات</small></button>
+      <button class="chip wan" data-go="explore" data-net="wan"><b>WAN</b>الشبكة الواسعة<small>مدن ودول وقارات</small></button>
+    </div>
+  </section>
+
+  <!-- المستكشف -->
+  <section class="panel" id="explore" role="tabpanel">
+    <h2>مستكشف <b>الشبكات</b></h2>
+    <p class="lead">اضغط على أي جهاز لتعرف دوره. ثم اضغط «أرسل رسالة» وشاهد الرسالة تمشي في الشبكة.</p>
+    <div class="seg" id="seg">
+      <button data-net="lan" aria-pressed="true">LAN المحلية</button>
+      <button data-net="man" aria-pressed="false">MAN المدينة</button>
+      <button data-net="wan" aria-pressed="false">WAN الواسعة</button>
+    </div>
+    <div class="explore">
+      <div class="scene"><canvas id="sceneCv" aria-label="رسم متحرك للشبكة"></canvas></div>
+      <div class="side">
+        <div class="box"><h3 id="nodeTitle">اختر جهازًا</h3><p id="nodeDesc">اضغط على أي دائرة في الرسم.</p></div>
+        <button class="btn" id="send">أرسل رسالة</button>
+        <div class="box log" id="log" aria-live="polite">الرسائل تظهر هنا.</div>
+        <div class="box"><ul class="facts" id="facts"></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- المقارنة -->
+  <section class="panel" id="compare" role="tabpanel">
+    <h2>أي شبكة <b>تناسب المسافة؟</b></h2>
+    <p class="lead">حرّك المؤشر لتغيّر المسافة بين الأجهزة، وانظر أي شبكة تكفي.</p>
+    <div class="ruler">
+      <div class="zones" aria-hidden="true"><div class="z1">LAN</div><div class="z2">MAN</div><div class="z3">WAN</div></div>
+      <input class="range" id="dist" type="range" min="0" max="100" value="12" aria-label="المسافة">
+      <div class="readout"><div class="big" id="distVal">٥٠ متر</div><p id="distTxt"></p></div>
+    </div>
+    <div class="cmp" id="cmp">
+      <div class="box" data-k="lan"><h3>LAN <span>الشبكة المحلية</span></h3><ul><li>مكان صغير: منزل، فصل، مكتب</li><li>عدد قليل من الأجهزة</li><li>سريعة وآمنة، ومثالها شبكة المدرسة</li></ul></div>
+      <div class="box" data-k="man"><h3>MAN <span>شبكة المدينة</span></h3><ul><li>مدينة واحدة</li><li>تربط عدة شبكات LAN بالألياف الضوئية</li><li>مثالها: مدارس ومستشفيات وجامعات</li></ul></div>
+      <div class="box" data-k="wan"><h3>WAN <span>الشبكة الواسعة</span></h3><ul><li>دول وقارات</li><li>أعداد كبيرة جدًا من الأجهزة</li><li>الأقمار الصناعية والإنترنت، ومثالها شركات لها فروع حول العالم</li></ul></div>
+    </div>
+  </section>
+
+  <!-- المعرض -->
+  <section class="panel" id="gallery" role="tabpanel">
+    <h2>معرض <b>الصور التوضيحية</b></h2>
+    <p class="lead">اضغط على أي صورة لتكبيرها، ثم تنقّل بالأسهم.</p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- الاختبار -->
+  <section class="panel" id="quiz" role="tabpanel">
+    <h2>اختبر <b>معلوماتك</b></h2>
+    <div class="qcard">
+      <div id="qbox">
+        <div class="qbar"><i id="qbar"></i></div>
+        <div class="qnum" id="qnum"></div>
+        <div class="qtext" id="qtext"></div>
+        <div class="opts" id="opts"></div>
+        <div class="why" id="why" aria-live="polite"></div>
+        <div class="cta" style="justify-content:flex-start;margin-top:10px"><button class="btn" id="nextQ" hidden>التالي</button></div>
+      </div>
+      <div class="result" id="result">
+        <div class="stars" id="stars"></div>
+        <h3 id="score"></h3>
+        <p id="msg"></p>
+        <button class="btn" id="again">أعد المحاولة</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div><b style="font-family:var(--font-display)">مدرسة شمس الوطن ٢٠١٥</b><small>نتعلّم ونتواصل ونبدع معًا</small></div>
+    <div class="sig"><span class="by">إعداد وتوقيع</span><span class="nm" id="sigName"></span>
+      <svg viewBox="0 0 240 14" aria-hidden="true"><path d="M2 9 C 40 1, 70 13, 110 6 S 190 2, 238 8"/></svg></div>
+  </div>
+</div>
+
+<nav class="tabs" role="tablist" aria-label="أقسام التطبيق">
+  <button role="tab" data-tab="home" aria-selected="true"><span class="ic">🏠</span>الرئيسية</button>
+  <button role="tab" data-tab="explore" aria-selected="false"><span class="ic">🛰️</span>استكشف</button>
+  <button role="tab" data-tab="compare" aria-selected="false"><span class="ic">📏</span>قارن</button>
+  <button role="tab" data-tab="gallery" aria-selected="false"><span class="ic">🖼️</span>الصور</button>
+  <button role="tab" data-tab="quiz" aria-selected="false"><span class="ic">⭐</span>اختبار</button>
+</nav>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="عرض الصورة">
+  <img id="lbImg" alt="">
+  <div class="row"><button class="round" id="lbNext" aria-label="التالي">&#10095;</button><p id="lbCap"></p><button class="round" id="lbPrev" aria-label="السابق">&#10094;</button></div>
+  <button class="btn ghost" id="lbClose">إغلاق</button>
+</div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<script src="app.js"></script>
+<script src="../sign.js" data-pos="left" data-bottom="76" defer></script>
+</body>
+</html>

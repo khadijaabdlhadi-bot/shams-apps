@@ -2,6 +2,7 @@
 
 **كل الروابط في صفحة واحدة**: https://khadijaabdlhadi-bot.github.io/shams-apps/links/
 
+- **عالم الشبكات — LAN وMAN وWAN (تطبيق تفاعلي بالموشن جرافيك)**: https://khadijaabdlhadi-bot.github.io/shams-apps/networks-world/
 - **المتباينات — رياضيات الثانوي (شرح الوحدة + تحدٍّ بالنجوم)**: https://khadijaabdlhadi-bot.github.io/shams-apps/inequalities-lesson/
 - **Phonics Star — نجم الفونكس (مراجعة sh ch th والمقاطع)**: https://khadijaabdlhadi-bot.github.io/shams-apps/phonics/
 - **حضور شمس الوطن (حضور وانصراف المدرسات بالموقع)**: https://khadijaabdlhadi-bot.github.io/shams-apps/teacher-attendance/
