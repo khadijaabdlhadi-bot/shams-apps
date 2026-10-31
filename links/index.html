@@ -6,7 +6,12 @@
 <title>تطبيقات شمس الوطن</title>
 <meta name="description" content="كل تطبيقات وألعاب مدرسة شمس الوطن التعليمية في صفحة واحدة.">
 <meta name="theme-color" content="#0e5a74">
-<link rel="icon" href="../sets/icons/icon-192.png">
+<link rel="icon" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-apple.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="تطبيقات شمس">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@400;500;700;800&display=swap">
 <style>
@@ -205,5 +210,6 @@ var THUMBS = {"sound-detectives": "data:image/webp;base64,UklGRqQZAABXRUJQVlA4IJ
   document.getElementById('copy-all').onclick = function () { copy(HUB); };
 })();
 </script>
+<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(function(){})</script>
 <script src="https://khadijaabdlhadi-bot.github.io/shams-apps/sign.js" data-pos="left" defer></script>
 </body></html>
