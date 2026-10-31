@@ -2,6 +2,7 @@
 
 **كل الروابط في صفحة واحدة**: https://khadijaabdlhadi-bot.github.io/shams-apps/links/
 
+- **برنامج شمس الابتكار (الخطة السنوية: 15 مبادرة و36 أسبوعاً، يُثبَّت على الآيباد)**: https://khadijaabdlhadi-bot.github.io/shams-apps/innovation-program/
 - **عالم الشبكات — LAN وMAN وWAN (تطبيق تفاعلي بالموشن جرافيك)**: https://khadijaabdlhadi-bot.github.io/shams-apps/networks-world/
 - **المتباينات — رياضيات الثانوي (شرح الوحدة + تحدٍّ بالنجوم)**: https://khadijaabdlhadi-bot.github.io/shams-apps/inequalities-lesson/
 - **Phonics Star — نجم الفونكس (مراجعة sh ch th والمقاطع)**: https://khadijaabdlhadi-bot.github.io/shams-apps/phonics/
