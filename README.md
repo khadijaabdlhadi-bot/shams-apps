@@ -5,7 +5,7 @@
 - **برنامج شمس الابتكار (الخطة السنوية: 15 مبادرة و36 أسبوعاً، يُثبَّت على الآيباد)**: https://khadijaabdlhadi-bot.github.io/shams-apps/innovation-program/
 - **عالم الشبكات — LAN وMAN وWAN (تطبيق تفاعلي بالموشن جرافيك)**: https://khadijaabdlhadi-bot.github.io/shams-apps/networks-world/
 - **المتباينات — رياضيات الثانوي (شرح الوحدة + تحدٍّ بالنجوم)**: https://khadijaabdlhadi-bot.github.io/shams-apps/inequalities-lesson/
-- **Phonics Star — نجم الفونكس (كل الأصوات الـ15 بالبطاقات + 6 ألعاب منها فرقعة البالونات والذاكرة)**: https://khadijaabdlhadi-bot.github.io/shams-apps/phonics/
+- **Phonics Star — نجم الفونكس (كل الأصوات الـ16 بالبطاقات + 6 ألعاب منها فرقعة البالونات والذاكرة)**: https://khadijaabdlhadi-bot.github.io/shams-apps/phonics/
 - **حضور شمس الوطن (حضور وانصراف المدرسات بالموقع)**: https://khadijaabdlhadi-bot.github.io/shams-apps/teacher-attendance/
 - **Sound Detectives — محققو الأصوات (إنجليزي تفاعلي)**: https://khadijaabdlhadi-bot.github.io/shams-apps/sound-detectives/
 - **تحدّي المتباينات (مسابقة 4 فرق للسبورة الذكية)**: https://khadijaabdlhadi-bot.github.io/shams-apps/inequalities-challenge/
