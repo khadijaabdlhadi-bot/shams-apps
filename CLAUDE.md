@@ -22,7 +22,12 @@ When you add or change an app:
    Three.js as they are. Never commit a readable version here, not even in an
    intermediate commit: readable sources belong in the private
    `shams-apps-source` repo.
-6. Smoke-test every touched page in a browser (no page errors) before pushing,
+6. Add the owner's GoatCounter visit counter before the `sign.js` tag:
+   `<script data-goatcounter="https://shams-alwatan.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>`
+   (not on admin pages or redirect stubs). Dashboard:
+   https://shams-alwatan.goatcounter.com. Custom events, if any, use Arabic
+   names so the owner can read them.
+7. Smoke-test every touched page in a browser (no page errors) before pushing,
    then check the "pages build and deployment" run succeeded.
 
 ## Signature on every design (owner's standing request)
