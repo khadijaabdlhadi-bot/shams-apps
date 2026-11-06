@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Mahmoud Ibrahim Mostafa">
+<title>ERTC · Emergency Room Trauma Course</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b12;--card:#0f1622;--line:#1f2a3a;--ink:#e8eef7;--mute:#8a98ad;--red:#ff3b4e}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1200px 600px at 50% -10%,#1a0e16,transparent),var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:48px 16px}
+.kick{letter-spacing:.3em;font-size:12px;color:var(--red);font-weight:600}
+h1{font-size:clamp(28px,5vw,48px);margin:10px 0 6px;font-weight:800;text-align:center}
+.sub{color:var(--mute);margin-bottom:28px;text-align:center}
+svg.ecg{width:min(640px,100%);height:50px;margin-bottom:32px}
+svg.ecg path{stroke:var(--red);stroke-width:2;fill:none;stroke-dasharray:900;stroke-dashoffset:900;animation:d 2.6s linear infinite}
+@keyframes d{to{stroke-dashoffset:0}}
+.grid{display:grid;gap:16px;width:min(960px,100%);grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+a.card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;transition:transform .2s,border-color .2s}
+a.card:hover{transform:translateY(-4px);border-color:var(--red)}
+.n{font-size:12px;color:var(--red);font-weight:700;letter-spacing:.15em}
+.t{font-size:20px;font-weight:800;margin:8px 0}
+.c{color:var(--mute);font-size:14px;line-height:1.6}
+.s{margin-top:14px;font-size:13px;color:var(--ink);opacity:.7}
+footer{margin-top:48px;color:var(--mute);font-size:13px;text-align:center}
+footer b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="kick">EMERGENCY ROOM TRAUMA COURSE</div>
+<h1>ERTC Lectures</h1>
+<div class="sub">Interactive lecture presentations</div>
+<svg class="ecg" viewBox="0 0 640 50"><path d="M0 25H220l12-18 14 36 12-30 10 12H640"/></svg>
+<div class="grid">
+<a class="card" href="g1/"><div class="n">GROUP 1</div><div class="t">Foundations &amp; Primary Survey</div><div class="c">Introduction · Initial Assessment · Airway · Shock · Thorax</div><div class="s">178 slides →</div></a>
+<a class="card" href="g2/"><div class="n">GROUP 2</div><div class="t">Regional Injuries</div><div class="c">Abdomen &amp; Pelvis · Limbs · Head · Spine</div><div class="s">126 slides →</div></a>
+<a class="card" href="g3/"><div class="n">GROUP 3</div><div class="t">Special Situations &amp; Mass Casualty</div><div class="c">Paediatric · Pregnancy · Thermal · Triage · Ballistics &amp; Blasts</div><div class="s">144 slides →</div></a>
+</div>
+<footer>Presented by <b>Mahmoud Ibrahim Mostafa</b></footer>
+<script data-goatcounter="https://shams-alwatan.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

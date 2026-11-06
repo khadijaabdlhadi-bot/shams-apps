@@ -18,5 +18,6 @@
 - **الجدول الدوري لشمس الوطن**: https://khadijaabdlhadi-bot.github.io/shams-apps/periodic-table/
 - **صيّاد الرموز (المجموعات: الانتماء والاحتواء)**: https://khadijaabdlhadi-bot.github.io/shams-apps/sets/
 - **مراجعة المفكوك الجبري**: https://khadijaabdlhadi-bot.github.io/shams-apps/algebra-expansion/
+- **ERTC Lectures (دورة الطوارئ — د. محمود إبراهيم مصطفى)**: https://khadijaabdlhadi-bot.github.io/shams-apps/ertc/
 
 © مدرسة شمس الوطن. جميع الحقوق محفوظة. لا يُسمح بنسخ هذه التطبيقات أو إعادة استخدامها أو نشرها دون إذن من المدرسة.
