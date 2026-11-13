@@ -2,7 +2,7 @@
 
 **كل الروابط في صفحة واحدة**: https://khadijaabdlhadi-bot.github.io/shams-apps/links/
 
-- **معلّمتي شموسة — رياضيات الصف الثامن (شرح المعادلات والنسبة + تمارين + 4 ألعاب منها البالونات + امتحان نهائي بتقرير مستوى)**: https://khadijaabdlhadi-bot.github.io/shams-apps/math8-tutor/
+- **معلّمتي شموسة — رياضيات الصف الثامن (المعادلات + النسبة والتناسب الطردي والعكسي، فحص فهم بعد كل درس، 4 ألعاب، 7 نماذج امتحان من 12 درجة تُصحَّح تلقائياً)**: https://khadijaabdlhadi-bot.github.io/shams-apps/math8-tutor/
 - **برنامج شمس الابتكار (الخطة السنوية: 15 مبادرة و36 أسبوعاً، يُثبَّت على الآيباد)**: https://khadijaabdlhadi-bot.github.io/shams-apps/innovation-program/
 - **عالم الشبكات — LAN وMAN وWAN (تطبيق تفاعلي بالموشن جرافيك)**: https://khadijaabdlhadi-bot.github.io/shams-apps/networks-world/
 - **المتباينات — رياضيات الثانوي (شرح الوحدة + تحدٍّ بالنجوم)**: https://khadijaabdlhadi-bot.github.io/shams-apps/inequalities-lesson/
