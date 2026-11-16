@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ERTC — Trainer Dashboard</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--ink:#14213d;--muted:#5c6b80;--line:#dfe5ee;--bg:#f4f6fa;--brand:#b3202a;--brand2:#14213d;--ok:#1d7a46;--warn:#b45f06}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%}
+header{background:var(--brand2);color:#fff;padding:14px 18px}
+header .t{font-weight:700;letter-spacing:.04em;font-size:12px;opacity:.8}
+header .s{font-size:18px;font-weight:700}
+main{max-width:1000px;margin:0 auto;padding:16px 14px 60px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+h2{font-size:16px;margin:0 0 12px}
+input{width:100%;font:inherit;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px}
+button{font:inherit;font-weight:700;border:0;border-radius:10px;padding:11px 16px;cursor:pointer;background:var(--brand);color:#fff}
+button.sec{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+button.sm{padding:6px 10px;font-size:13px}
+.seg{display:flex;border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
+.seg button{flex:1;border-radius:0;background:#fff;color:var(--ink);padding:12px 6px}
+.seg button.on{background:var(--brand2);color:#fff}
+.seg button.on.pre,.seg button.on.post{background:var(--ok)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.stat{background:var(--bg);border-radius:12px;padding:12px}
+.stat .v{font-size:26px;font-weight:800;line-height:1.1}
+.stat .k{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:640px}
+th,td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+.up{color:var(--ok);font-weight:700}.down{color:var(--brand);font-weight:700}
+.muted{color:var(--muted)}
+.qbar{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13px}
+.qbar .lab{width:34px;color:var(--muted);font-weight:700}
+.qbar .tr{flex:1;height:10px;background:var(--bg);border-radius:6px;overflow:hidden}
+.qbar .tr i{display:block;height:100%}
+.qbar .pc{width:44px;text-align:right;font-variant-numeric:tabular-nums}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.err{color:var(--brand);font-weight:600;min-height:1em;margin:8px 0}
+dialog{border:0;border-radius:14px;max-width:640px;width:calc(100% - 24px);padding:0}
+dialog .in{padding:18px;max-height:80vh;overflow:auto}
+.ans{padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+.ans b{display:inline-block;width:26px}
+.ok{color:var(--ok)}.bad{color:var(--brand)}
+footer{text-align:center;color:var(--muted);font-size:12px;margin-top:18px}
+.hidden{display:none!important}
+@media print{header,.noprint,button{display:none!important}body,main{background:#fff}.card{border:0;padding:0}table{min-width:0}}
+</style>
+</head>
+<body>
+<header><div class="t">EMERGENCY ROOM TRAUMA COURSE</div><div class="s">Trainer Dashboard</div></header>
+<main id="app"></main>
+<dialog id="dlg"><div class="in" id="dlgIn"></div></dialog>
+<script src="config.js"></script>
+<script src="common.js"></script>
+<script src="questions.js"></script>
+<script src="dash.js"></script>
+</body>
+</html>
