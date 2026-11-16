@@ -27,7 +27,14 @@ When you add or change an app:
    (not on admin pages or redirect stubs). Dashboard:
    https://shams-alwatan.goatcounter.com. Custom events, if any, use Arabic
    names so the owner can read them.
-7. Smoke-test every touched page in a browser (no page errors) before pushing,
+7. Apps that use WebGL/3D (Three.js, AR) must include the browser guard
+   `<script id="kaGuard">` before `</head>` (readable source:
+   `apps-source/lab/browser-guard.js` in Shams-finance; obfuscate before
+   inserting). Without WebGL it replaces the enter button with "open in
+   Chrome / copy link", so in-app browsers such as Facebook Lite never leave a
+   user stuck on the intro screen. Test with `--disable-webgl` and a Facebook
+   user agent.
+8. Smoke-test every touched page in a browser (no page errors) before pushing,
    then check the "pages build and deployment" run succeeded.
 
 ## Signature on every design (owner's standing request)
