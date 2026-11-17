@@ -2,6 +2,7 @@
 
 **كل الروابط في صفحة واحدة**: https://khadijaabdlhadi-bot.github.io/shams-apps/links/
 
+- **تفاضل خارج القسمة — معركة الكسور (شرح بنفس رموز الكتاب، أمثلة محلولة، تمارين بالحل، ولعبة معركة ضد 3 زعماء)**: https://khadijaabdlhadi-bot.github.io/shams-apps/quotient-rule/
 - **معلّمتي شموسة — رياضيات الصف الثامن (المعادلات + النسبة والتناسب الطردي والعكسي، فحص فهم بعد كل درس، 4 ألعاب، 7 نماذج امتحان من 12 درجة تُصحَّح تلقائياً)**: https://khadijaabdlhadi-bot.github.io/shams-apps/math8-tutor/
 - **برنامج شمس الابتكار (الخطة السنوية: 15 مبادرة و36 أسبوعاً، يُثبَّت على الآيباد)**: https://khadijaabdlhadi-bot.github.io/shams-apps/innovation-program/
 - **عالم الشبكات — LAN وMAN وWAN (تطبيق تفاعلي بالموشن جرافيك)**: https://khadijaabdlhadi-bot.github.io/shams-apps/networks-world/
