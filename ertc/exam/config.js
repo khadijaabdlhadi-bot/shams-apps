@@ -1,5 +1,5 @@
 // Supabase connection (Project Settings > API)
 window.ERTC_CONFIG = {
-  url: '',      // e.g. https://abcdxyz.supabase.co
-  anonKey: ''   // the "anon public" key
+  url: 'https://cyebmlnhdngkfdqjnahj.supabase.co',
+  anonKey: 'sb_publishable_nxp4BbNpMJrgztEFXdP1yw_2MWDK9F7'
 };
