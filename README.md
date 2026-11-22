@@ -2,6 +2,7 @@
 
 **كل الروابط في صفحة واحدة**: https://khadijaabdlhadi-bot.github.io/shams-apps/links/
 
+- **English Heroes — أبطال الإنجليزي (الألوان والأشكال والأرقام والمقارنة وحروف الجر والكلمات السحرية والضمائر في 8 ألعاب + صوت المعلّمة)**: https://khadijaabdlhadi-bot.github.io/shams-apps/english-heroes/
 - **أبطال الأرقام — مع شموس وشموسة (الجمع والطرح والمقارنة والترتيب والضرب والقسمة والمسائل اللفظية والهندسة في 6 ألعاب + تسجيل صوت المعلّمة)**: https://khadijaabdlhadi-bot.github.io/shams-apps/math-heroes/
 - **تفاضل خارج القسمة — معركة الكسور (شرح بنفس رموز الكتاب، أمثلة محلولة، تمارين بالحل، ولعبة معركة ضد 3 زعماء)**: https://khadijaabdlhadi-bot.github.io/shams-apps/quotient-rule/
 - **معلّمتي شموسة — رياضيات الصف الثامن (المعادلات + النسبة والتناسب الطردي والعكسي، فحص فهم بعد كل درس، 4 ألعاب، 7 نماذج امتحان من 12 درجة تُصحَّح تلقائياً)**: https://khadijaabdlhadi-bot.github.io/shams-apps/math8-tutor/
