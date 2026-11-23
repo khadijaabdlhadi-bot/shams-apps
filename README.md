@@ -2,6 +2,7 @@
 
 **كل الروابط في صفحة واحدة**: https://khadijaabdlhadi-bot.github.io/shams-apps/links/
 
+- **محرّر امتحانات شمس الوطن (تصميم موحّد + رموز الرياضيات والفيزياء والكيمياء + محرّر معادلات، يُثبَّت ويعمل بدون إنترنت)**: https://khadijaabdlhadi-bot.github.io/shams-apps/exam-builder/
 - **English Heroes — أبطال الإنجليزي (الألوان والأشكال والأرقام والمقارنة وحروف الجر والكلمات السحرية والضمائر في 8 ألعاب + صوت المعلّمة)**: https://khadijaabdlhadi-bot.github.io/shams-apps/english-heroes/
 - **أبطال الأرقام — مع شموس وشموسة (الجمع والطرح والمقارنة والترتيب والضرب والقسمة والمسائل اللفظية والهندسة في 6 ألعاب + تسجيل صوت المعلّمة)**: https://khadijaabdlhadi-bot.github.io/shams-apps/math-heroes/
 - **تفاضل خارج القسمة — معركة الكسور (شرح بنفس رموز الكتاب، أمثلة محلولة، تمارين بالحل، ولعبة معركة ضد 3 زعماء)**: https://khadijaabdlhadi-bot.github.io/shams-apps/quotient-rule/
