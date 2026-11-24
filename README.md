@@ -2,6 +2,7 @@
 
 **كل الروابط في صفحة واحدة**: https://khadijaabdlhadi-bot.github.io/shams-apps/links/
 
+- **القوة وتأثيرها على الحركة (قوانين نيوتن الثلاثة بمحاكاة تفاعلية + الاحتكاك + خريطة المفاهيم + اختبار + قراءة صوتية)**: https://khadijaabdlhadi-bot.github.io/shams-apps/forces-motion/
 - **رحلة الأزمنة — Tense Quest (تصريف الأفعال بالإنجليزي في 8 عوالم: الحاضر البسيط والمستمر، الماضي البسيط والمستمر، المستقبل، الكلمات الدالة، Lesson 4، وبرج التحدي + سحب باللمس وصوت المعلّمة)**: https://khadijaabdlhadi-bot.github.io/shams-apps/tense-quest/
 - **محرّر امتحانات شمس الوطن (تصميم موحّد + رموز الرياضيات والفيزياء والكيمياء + محرّر معادلات، يُثبَّت ويعمل بدون إنترنت)**: https://khadijaabdlhadi-bot.github.io/shams-apps/exam-builder/
 - **English Heroes — أبطال الإنجليزي (الألوان والأشكال والأرقام والمقارنة وحروف الجر والكلمات السحرية والضمائر في 8 ألعاب + صوت المعلّمة)**: https://khadijaabdlhadi-bot.github.io/shams-apps/english-heroes/
