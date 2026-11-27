@@ -2,6 +2,7 @@
 
 **كل الروابط في صفحة واحدة**: https://khadijaabdlhadi-bot.github.io/shams-apps/links/
 
+- **شمس البيان — معلّمك في فنّ التعبير (موضوعات للإعدادي والثانوي: مقالة وقصة وحكمة ووصف، تصحيح فوري للإملاء والترقيم والتكرار والترابط برسالة من المعلّم ودرجة من 20، ومكتبة قواعد إملائية باختبارات)**: https://khadijaabdlhadi-bot.github.io/shams-apps/shams-bayan/
 - **نحلة التهجئة — Spelling Bee (8 مراحل تنفتح بالإتقان: تعلّم، تدرّب بصوت المعلّمة، اكتب حرف حرف، مسابقة شفهية، وتحدّي المرحلة 👑 مع شموس وشموسة)**: https://khadijaabdlhadi-bot.github.io/shams-apps/spelling-bee/
 - **القوة وتأثيرها على الحركة (قوانين نيوتن الثلاثة بمحاكاة تفاعلية + الاحتكاك + خريطة المفاهيم + اختبار + قراءة صوتية)**: https://khadijaabdlhadi-bot.github.io/shams-apps/forces-motion/
 - **رحلة الأزمنة — Tense Quest (تصريف الأفعال بالإنجليزي في 8 عوالم: الحاضر البسيط والمستمر، الماضي البسيط والمستمر، المستقبل، الكلمات الدالة، Lesson 4، وبرج التحدي + سحب باللمس وصوت المعلّمة)**: https://khadijaabdlhadi-bot.github.io/shams-apps/tense-quest/
